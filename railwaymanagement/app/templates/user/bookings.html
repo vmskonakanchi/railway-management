@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %} {% include "nav/usernav.html" %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col col-lg-2"></div>
+    {% if trains %}
+    <div class="col col-lg-8">
+        <table class="table table-hovered table-striped">
+            <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Train Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in trains %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.train_name }}</td>
+                <td>{{ i.from_station }}</td>
+                <td>{{ i.to_station }}</td>
+                <td>{{ i.departure }}</td>
+                <td>{{ i.arrival }}</td>
+                <td>{{ i.price }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    <div class="col col-lg-2"></div>
+  </div>
+</div>
+
+{% endblock %}

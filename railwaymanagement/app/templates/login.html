@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags  %}
+
+{% block content %}
+{% include "nav/mainnav.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-4"></div>
+        <div class="col col-lg-4 mt-5">
+            <div class="mt-5">
+                {% if errors %}
+                {% for i in errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ i }}
+                </div>
+                {% endfor %}
+                {% endif %}
+            {% crispy form %}
+        </div>
+        </div>
+        <div class="col col-lg-4"></div>
+    </div>
+</div>
+
+{% endblock %}

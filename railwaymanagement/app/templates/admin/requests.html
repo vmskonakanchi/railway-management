@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% include "nav/adminnav.html" %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col col-lg-2"></div>
+        <div class="col col-lg-8">
+            <table class="table table-hovered table-striped">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>FromDate</th>
+                        <th>ToDate</th>
+                        <th>TrainName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in trains %}
+                    <tr>
+                        <td>{{ i.id }}</td>
+                        <td>{{ i.user.first_name }}</td>
+                        <td>{{ i.user.email }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col col-lg-2"></div>
+    </div>
+</div>
+
+{% endblock %}
