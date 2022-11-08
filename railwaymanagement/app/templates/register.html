@@ -5,19 +5,21 @@
 {% block content %}
 {% include "nav/mainnav.html" %}
 
-<div class="container">
+<div class="container" style="height: 38rem; background-image: url('/static/train2.jpg'); object-fit: cover;">
     <div class="row mt-5">
         <div class="col col-lg-4"></div>
         <div class="col col-lg-4">
             <div class="mt-5">
-                {% if errors %}
-                {% for i in errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ i }}
+                <div class="card">
+                    <div class="card-body">
+                        {% if message %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% crispy form %}
+                    </div>
                 </div>
-                {% endfor %}
-                {% endif %}
-            {% crispy form %}
         </div>
         </div>
         <div class="col col-lg-4"></div>

@@ -2,8 +2,8 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col col-lg-2"></div>
-    <div class="col col-lg-8">
+    <div class="col col-lg-1"></div>
+    <div class="col col-lg-10">
         <table class="table table-hovered table-striped">
             <thead>
                 <tr>
@@ -22,12 +22,12 @@
             {% for i in trains %}
             <tr>
                 <td>{{ i.id }}</td>
-                <td>{{ i.train_name }}</td>
+                <td>{{ i.name }}</td>
                 <td>{{ i.from_station }}</td>
                 <td>{{ i.to_station }}</td>
-                <td>{{ i.departure }}</td>
-                <td>{{ i.arrival }}</td>
-                <td>{{ i.price }}</td>
+                <td>{{ i.departure_time }}</td>
+                <td>{{ i.arrival_time }}</td>
+                <td>{{ i.price }} /-</td>
                 <td><a href="/user/book/{{i.id}}/" class="btn btn-success">Book</a></td>
             </tr>
             {% endfor %}
@@ -35,7 +35,7 @@
         {% endif %}
         </table>
     </div>
-    <div class="col col-lg-2"></div>
+    <div class="col col-lg-1"></div>
   </div>
 </div>
 

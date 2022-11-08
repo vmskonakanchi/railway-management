@@ -1,20 +1,24 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-{% include "nav/mainnav.html" %}
+{% extends "base.html" %} {% block content %} {% include "nav/mainnav.html" %}
 
 <div class="container">
-    <div class="row mt-5">
-        <div class="col col-lg-3">
-            <div class="display-5">Welcome To Railway Management System</div>
-        </div>
-        <div class="col col-lg-6">
-
-        </div>
-        <div class="col col-lg-3"></div>
+  <div class="row mt-5">
+    <div class="col col-lg-4">
+      <div class="jumbotron">
+        <h1 class="display-3">Welcome To Railway Management System</h1>
+        <p class="lead">Enjoy the journey as much as the destination </p>
+        <hr class="my-2">
+        <p>Where great journeys are made ...!</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/register" role="button">Journey With Us</a>
+        </p>
+      </div>
     </div>
+    <div class="col col-lg-8">
+      <div class="card border-success" style="height: 30rem">
+        <img src="/static/train.jpg" class="card-img-top" alt="train image" />
+      </div>
+    </div>
+  </div>
 </div>
-
 
 {% endblock %}

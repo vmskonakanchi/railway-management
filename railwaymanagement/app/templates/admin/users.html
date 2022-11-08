@@ -7,8 +7,8 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col col-lg-3"></div>
-        <div class="col col-lg-6">
+        <div class="col col-lg-2"></div>
+        <div class="col col-lg-8">
             <table class="table table-hovered table-striped">
                 <thead>
                     <tr>
@@ -19,16 +19,18 @@
                 </thead>
                 <tbody>
                     {% for i in users %}
+                    {% if i.is_superuser == False %}
                     <tr>
                         <td>{{ i.id }}</td>
                         <td>{{ i.first_name }}</td>
                         <td>{{ i.email }}</td>
                     </tr>
+                    {% endif %}
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class="col col-lg-3"></div>
+        <div class="col col-lg-2"></div>
     </div>
 </div>
 

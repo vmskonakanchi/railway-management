@@ -7,31 +7,39 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col col-lg-2"></div>
-        <div class="col col-lg-8">
+        <div class="col col-lg-1"></div>
+        <div class="col col-lg-10">
             <table class="table table-hovered table-striped">
                 <thead>
                     <tr>
                         <th>S.No</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>FromDate</th>
-                        <th>ToDate</th>
                         <th>TrainName</th>
+                        <th>Date</th>
+                        <th>Seat No</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in trains %}
+                    {% for i in requests %}
                     <tr>
                         <td>{{ i.id }}</td>
                         <td>{{ i.user.first_name }}</td>
                         <td>{{ i.user.email }}</td>
+                        <td>{{ i.train.name }}</td>
+                        <td>{{ i.train.arrival_time }}</td>
+                        <th>{{i.train.id}}</th>
+                        <td>
+                            <a href="/admin/accept/{{ i.id }}" class="btn btn-success">Accept</a>
+                            <a href="/admin/reject/{{ i.id }}" class="btn btn-danger">Reject</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class="col col-lg-2"></div>
+        <div class="col col-lg-1"></div>
     </div>
 </div>
 
